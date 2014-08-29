@@ -1,0 +1,11 @@
+usage: OUIcount.py [-h] [-v] [-d] MACfile
+
+Count MAC addresses (given as decimal numbers) by OUI
+
+positional arguments:
+  MACfile         file containing decimal MAC addresses
+
+optional arguments:
+  -h, --help      show this help message and exit
+  -v, --verbose   verbose (enumerate MACs per OUI)
+  -d, --dontfold  don't fold prefixes with identical OUI strings

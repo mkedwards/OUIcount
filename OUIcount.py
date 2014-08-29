@@ -63,7 +63,7 @@ def loadOUIs():
 
 known_prefixes = {}
 
-def lookupOUI(prefix):
+def lookupOUI(prefix, dontfold):
 	global known_prefixes
 	oui = known_prefixes.get(prefix)
 	if oui is None:
@@ -71,16 +71,20 @@ def lookupOUI(prefix):
 		if name is None:
 			name = '(unknown) %02X:%02X:%02X' % prefix
 			oui = OUI(True, name, prefix)
-		else:
+		elif dontfold:
 			oui = OUI(False, name, prefix)
+		else:
+			oui = OUI(False, name, (0, 0, 0))
 		known_prefixes[prefix] = oui
 	return oui
 
 
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser(description='Count MAC addresses (given as decimal numbers) by OUI')
-	parser.add_argument('-v', dest='verbose', action='store_true',
+	parser.add_argument('-v', '--verbose', dest='verbose', action='store_true',
 	                    help='verbose (enumerate MACs per OUI)')
+	parser.add_argument('-d', '--dontfold', dest='dontfold', action='store_true',
+	                    help='don\'t fold prefixes with identical OUI strings')
 	parser.add_argument('MACfile', type=argparse.FileType('r'),
 	                    help='file containing decimal MAC addresses')
 	# Command line arguments are hard-coded for convenience of testing on iOS with Pythonista
@@ -101,7 +105,7 @@ if __name__ == '__main__':
 		if line.isspace():
 			continue
 		mac = ingestMAC(line)
-		oui = lookupOUI(mac[0:3])
+		oui = lookupOUI(mac[0:3], args.dontfold)
 		count_by_oui[oui] += 1
 		mac_count += 1
 		if oui.is_unknown:
@@ -110,10 +114,12 @@ if __name__ == '__main__':
 			macs_by_oui[oui].append(mac)
 
 	for oui, count in sorted(count_by_oui.items()):
-		print('%d\t%s' % (count_by_oui[oui], oui.name))
 		if args.verbose:
+			print('%d\t%s' % (count_by_oui[oui], oui.name))
 			for mac in sorted(macs_by_oui[oui]):
 				print('\t%02X:%02X:%02X:%02X:%02X:%02X' % mac)
-
+		else:
+			print('%s\t%d' % (oui.name, count_by_oui[oui]))
+		
 	if args.verbose:
 		print('\n%d MACs (%d with unknown OUI) in %d lines' % (mac_count, unknown_count, line_count))

@@ -1,11 +1,10 @@
-11	Barracuda Networks, Inc.
-11	CISCO SYSTEMS, INC.
-13	Greenlee
-11	Nokia Corporation
-14	Teleview
-9	X-traWeb Inc.
-2	XEROX CORPORATION
-9	XEROX CORPORATION
-9	XLNT DESIGNS INC.
-11	Xpeed, Inc.
-1	(unknown) 0B:3A:73
+Barracuda Networks, Inc.	11
+CISCO SYSTEMS, INC.	11
+Greenlee	13
+Nokia Corporation	11
+Teleview	14
+X-traWeb Inc.	9
+XEROX CORPORATION	11
+XLNT DESIGNS INC.	9
+Xpeed, Inc.	11
+(unknown) 0B:3A:73	1
