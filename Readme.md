@@ -6,6 +6,19 @@ Status (2014-08-29):  fully implemented.  Good unit test coverage for MAC ingest
 
 Deviations from spec:  There are two additional flags, "verbose" and "dontfold", which implement optional behaviors that may be useful for testing.  The field order in "verbose" mode differs from that in default mode, to make it easier to visually scan the counts per OUI.
 
+
+usage: OUIcount.py [-h] [-v] [-d] MACfile
+
+Count MAC addresses (given as decimal numbers) by OUI
+
+positional arguments:
+  MACfile         file containing decimal MAC addresses
+
+optional arguments:
+  -h, --help      show this help message and exit
+  -v, --verbose   verbose (enumerate MACs per OUI)
+  -d, --dontfold  don't fold prefixes with identical OUI strings
+
 ## Specification
 
 Given the attached list of MAC addresses in base 10, use the oui.txt file at the link provided to determine which organizations have MAC addresses in the list, and how many. 

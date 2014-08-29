@@ -87,8 +87,8 @@ if __name__ == '__main__':
 	                    help='don\'t fold prefixes with identical OUI strings')
 	parser.add_argument('MACfile', type=argparse.FileType('r'),
 	                    help='file containing decimal MAC addresses')
-	# Command line arguments are hard-coded for convenience of testing on iOS with Pythonista
-	args = parser.parse_args(['macs.txt'])
+	# Command line arguments can be hard-coded for convenience of testing on iOS with Pythonista
+	args = parser.parse_args()
 
 	loadOUIs()
 
