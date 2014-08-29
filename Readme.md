@@ -10,6 +10,6 @@ Print one organization per line, followed by the number of addresses that organi
 
 Hint: Download the oui.txt file once and read from local file system.  Also all but one of the entries in the macs.txt file has a corresponding company prefix in the oui file.
 
-Here's the link for the oui.txt file:
+Here's the link for the oui.txt file:  [oui.txt][1]
 
 [1]: http://standards.ieee.org/develop/regauth/oui/oui.txt
