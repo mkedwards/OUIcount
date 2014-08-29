@@ -1,0 +1,11 @@
+2	(unknown) 00:00:00
+9	(unknown) 00:00:01
+9	(unknown) 00:01:48
+11	(unknown) 00:03:00
+11	(unknown) 00:03:20
+9	(unknown) 00:40:2F
+1	(unknown) 0B:3A:73
+14	(unknown) 20:25:98
+13	(unknown) 50:64:41
+11	(unknown) 9C:CA:D9
+11	(unknown) FC:FB:FB

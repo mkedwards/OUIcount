@@ -1,0 +1,15 @@
+test_00001 (__main__.TestIngest) ... ok
+test_cisco (__main__.TestIngest) ... ok
+test_empty (__main__.TestIngest) ... ok
+test_innerspace (__main__.TestIngest) ... ok
+test_multiline (__main__.TestIngest) ... ok
+test_newline (__main__.TestIngest) ... ok
+test_nonnumeric (__main__.TestIngest) ... ok
+test_toobig (__main__.TestIngest) ... ok
+test_whitespace (__main__.TestIngest) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+OK
+EXIT (0)
